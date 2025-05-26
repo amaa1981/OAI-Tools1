@@ -1,10 +1,7 @@
-{{ $attendees := (.Values.attendees | int) }}
-{{- range $attendee := until $attendees }}
----
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: user{{ $attendee }}-registry-db
+  name: -registry-db
   namespace: user{{ $attendee }}-jukebox
   labels:
     component: db
@@ -69,4 +66,3 @@ spec:
     type: Recreate
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
-{{- end }}
