@@ -1,14 +1,10 @@
-{{ $cluster_domain := .Values.cluster_domain }}
-{{ $attendees := (.Values.attendees | int) }}
-{{- range $attendee := until $attendees }}
----
 apiVersion: modelregistry.opendatahub.io/v1alpha1
 kind: ModelRegistry
 metadata:
   annotations:
     openshift.io/description: ''
-    openshift.io/display-name: user{{ $attendee }}-registry
-  name: user{{ $attendee }}-registry
+    openshift.io/display-name: deployment-registry
+  name: deployment-registry
   namespace: rhoai-model-registries
   finalizers:
     - modelregistry.opendatahub.io/finalizer
@@ -65,4 +61,3 @@ spec:
         cpu: 100m
         memory: 256Mi
     serviceRoute: disabled
-{{- end }}
