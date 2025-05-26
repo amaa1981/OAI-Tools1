@@ -2,8 +2,8 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   annotations:
-    openshift.io/description: Can access Model Registry user{{ $attendee }}-registry
-    openshift.io/display-name: Registry User user{{ $attendee }}-registry
+    openshift.io/description: Can access Model Registry model-registry
+    openshift.io/display-name: Registry User model-registry
   name: role-registry
   namespace: rhoai-model-registries
   labels:
@@ -23,4 +23,4 @@ rules:
     resources:
       - services
     resourceNames:
-      - user{{ $attendee }}-registry
+      - model-registry
