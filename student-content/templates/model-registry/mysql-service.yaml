@@ -1,11 +1,8 @@
-{{ $attendees := (.Values.attendees | int) }}
-{{- range $attendee := until $attendees }}
----
 kind: Service
 apiVersion: v1
 metadata:
-  name: user{{ $attendee }}-registry-db
-  namespace: user{{ $attendee }}-jukebox
+  name: svc-registry-db
+  namespace: model-registry
   labels:
     component: db
 spec:
@@ -17,4 +14,3 @@ spec:
   type: ClusterIP
   selector:
     component: db
-{{- end }}
