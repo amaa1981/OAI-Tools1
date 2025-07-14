@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: deployment-registry-db
+  name: model-registry-db
   namespace: model-registry
   labels:
     component: db
