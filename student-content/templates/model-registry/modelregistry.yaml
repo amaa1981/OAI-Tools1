@@ -46,7 +46,7 @@ spec:
     host: model-registry-db.model-registry.svc.cluster.local
     passwordSecret:
       key: database-password
-      name: model-registry-db
+      name: secret-registry-db
     port: 3306
     skipDBCreation: false
     username: root
