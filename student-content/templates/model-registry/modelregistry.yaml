@@ -26,7 +26,7 @@ spec:
       security.opendatahub.io/authorization-group: default
     authProvider: redhat-ods-applications-auth-provider
     gateway:
-      domain: {{ $cluster_domain }}
+      domain: apps.cluster-trlmk.trlmk.sandbox180.opentlc.com
       grpc:
         gatewayRoute: enabled
         port: 443
@@ -43,10 +43,10 @@ spec:
     tlsMode: ISTIO_MUTUAL
   mysql:
     database: metadb
-    host: user{{ $attendee }}-registry-db.user{{ $attendee }}-jukebox.svc.cluster.local
+    host: model-registry-db.model-app.svc.cluster.local
     passwordSecret:
       key: database-password
-      name: user{{ $attendee }}-registry-db
+      name: model-registry-db
     port: 3306
     skipDBCreation: false
     username: root
